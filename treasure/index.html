@@ -1,0 +1,24 @@
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const validCode = '1731';
+
+    let response;
+    
+    if (code === validCode) {
+        response = {
+            treasure: "Captain Zephyr's Golden Banana Bread Recipe",
+            message: "Arr, ye found it, matey! The treasure be Granny's Golden Banana Bread Recipe, hidden all these years at these coordinates. 'Tis the most delicious recipe in all the seven seas!",
+            code: code,
+            recipe: "Granny's Secret Banana Bread Recipe\n\nMix three overripe bananas with two cups flour,\nAdd a cup of sugar and vanilla pour.\nBake at 350 for an hour or more,\nBut never open the oven door!"
+        };
+    } else {
+        response = {
+            error: "Wrong code!"
+        };
+    }
+
+    // Output pure JSON
+    document.write(JSON.stringify(response));
+</script>
+
